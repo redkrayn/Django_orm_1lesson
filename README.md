@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ### 3. Запустите сервер и зайдите на него:
 ```bash
-python main.py
+python manage.py
 ```
 Перейдите по ссылке http://127.0.0.1:8000
 
