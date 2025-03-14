@@ -9,7 +9,7 @@ password_db = env.str('PASSWORD_DB')
 port_db = env.str('PORT_DB')
 name_db = env.str('NAME_DB')
 user_db = env.str('USER_DB')
-debug_db = env.bool('DEBUG_DB')
+debug_db = env.bool('DEBUG_DB', default=True)
 
 DATABASES = {
     'default': {
