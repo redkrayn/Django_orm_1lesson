@@ -6,15 +6,18 @@ env.read_env()
 
 host_db = env.str('HOST_DB')
 password_db = env.str('PASSWORD_DB')
-debug_db = env.bool('DEBUG_DB')
+port_db = env.str('PORT_DB')
+name_db = env.str('NAME_DB')
+user_db = env.str('USER_DB')
+debug_db = env.bool('DEBUG_DB', default=True)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': host_db,
-        'PORT': '5434',
-        'NAME': 'checkpoint',
-        'USER': 'guard',
+        'PORT': port_db,
+        'NAME': name_db,
+        'USER': user_db,
         'PASSWORD': password_db,
     }
 }
@@ -27,7 +30,7 @@ DEBUG = debug_db
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
