@@ -9,7 +9,8 @@ password_db = env.str('PASSWORD_DB')
 port_db = env.str('PORT_DB')
 name_db = env.str('NAME_DB')
 user_db = env.str('USER_DB')
-debug_db = env.bool('DEBUG_DB', default=True)
+debug_db = env.bool('DEBUG_DB', default=False)
+local_host = env.list('ALLOWED_HOSTS', default=['127.0.0.1', 'localhost'])
 
 DATABASES = {
     'default': {
@@ -30,8 +31,7 @@ DEBUG = debug_db
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = local_host
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
